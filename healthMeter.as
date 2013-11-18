@@ -1,0 +1,4 @@
+﻿class healthMeter extends MovieClip
+{
+	
+}

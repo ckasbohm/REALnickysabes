@@ -1,0 +1,1 @@
+﻿class playAgainButton extends Button {}

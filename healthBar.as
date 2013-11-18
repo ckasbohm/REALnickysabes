@@ -1,0 +1,6 @@
+﻿class healthBar extends MovieClip
+
+{
+	
+	
+}
