@@ -27,6 +27,12 @@
 	{
 		this.removeMovieClip();
 		
+		
+	//this should remove fired missles from the array and hopefully stop lag (exists in enemy missle, enemyship, missile)
+//			var heroMissile:Array = [0];
+//			heroMissile.splice(0);
+//			trace(heroMissile);
+		
 	}
 	
 
@@ -43,6 +49,8 @@
 				}
 				
 				
+	
+			//this is for attempt at missile to enemy missile collison 
 					for(var i in _root.enemyship.enemyMissile)
 				{
 						for(var j in _root.ship.heroMissile)

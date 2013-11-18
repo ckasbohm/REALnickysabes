@@ -36,6 +36,12 @@
 		if(_x<-100)
 		{
 			this.removeMovieClip();
+			
+	//this should remove enemy ships from the array and hopefully stop lag (exists in enemy missle, enemyship, missile)
+//			var enemies:Array = [0];
+//			enemies.splice(0);
+//			trace(enemies);
+			
 		}
 	
 
@@ -43,11 +49,21 @@
 		{
 			explode();
 			_root.ship.updateHealth(-5);
+			
+	//this should remove enemy ships from the array and hopefully stop lag (exists in enemy missle, enemyship, missile)
+//			var enemies:Array = [0];
+//			enemies.splice(0);
+//			trace(enemies);
 		}
 		
 		if(this.hitTest(_root.missle))
 		{
 			explode();
+			
+	//this should remove enemy ships from the array and hopefully stop lag (exists in enemy missle, enemyship, missile)
+//			var enemies:Array = [0];
+//			enemies.splice(0);
+//			trace(enemies);
 		}
 		
 		shootTimer += 1;

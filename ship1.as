@@ -112,6 +112,11 @@
 	
 	function onEnterFrame()
 	{
+		
+	
+		
+		
+		
 		if(score==500||score==1000||score==1500)
 		{
 			
@@ -183,6 +188,7 @@
 			
 
 		}	
+		
 		
 		
 	}
