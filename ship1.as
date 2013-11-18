@@ -8,6 +8,7 @@
 	var health;
 	var enemyMissile;
 	var powerUpCount;
+	var heroMissile;
 
 
 	
@@ -16,10 +17,17 @@
 	{
 		this._visible=true;
 		_root.gameOverScreen._visible=false;
+		_root.removeMovieClip.screenClearPowerup();
 		resetHealth();
 		resetScore();
 		_x = 25;
 		_y = 75;
+		_root.startScreen._visible=false;
+		_root.removeMovieClip.startScreen;
+		_root.healthMeter._visible = true;
+		_root.healthMeter.bar._visible = true;
+		
+		
 		
 	}
 	
@@ -82,13 +90,24 @@
 		shootLimiter = 0;
 		enemyTimer = 0;
 		enemies = [];
+		heroMissile = [];
 		resetScore();
 		resetHealth();
-		_root.ship.newGame();
+		_root.healthMeter._visible = false;
+		_root.healthMeter.bar._visible = false;
+		_root.gameOverScreen._visible=false;
+		_root.ship._visible=false;
+		_root.missle._visible=false;
 		_root.gameOverScreen.playAgainButton.onPress = function()
 		{
 		_root.ship.newGame();
 		}
+		
+		_root.startScreen.startButton.onPress = function()
+		{
+		_root.ship.newGame();
+		}
+		
 	}
 	
 	function onEnterFrame()
@@ -132,23 +151,28 @@
 		if( Key.isDown(Key.LEFT) ){_x = _x - velocity;}
 		if( Key.isDown(Key.UP) ){_y = _y - velocity;}
 		if( Key.isDown(Key.DOWN) ){_y = _y + velocity;}
-		if( Key.isDown(Key.SPACE) && shootLimiter > 4 )
+		if( Key.isDown(Key.SPACE) && shootLimiter > 8 && (_root.startScreen._visible==false))
 		{
 			shootLimiter= 0;
 			var missile = _root.attachMovie( "missle" , "missle" + _root.getNextHighestDepth(), _root.getNextHighestDepth() );
 			missile._x = _x +8;
 			missile._y = _y -9;
+			heroMissile.push(missile);
+			
 		}
 	
-		enemyTimer += .5;
+			enemyTimer += .5;
+		
+	
+	
 		
 		if(_root.ship.health<1)
 		{
 			enemyTimer = 5;
 		}
 		
-		
-		if(enemyTimer>5)
+	
+		if(enemyTimer>5 && (_root.startScreen._visible==false))
 
 		{
 			

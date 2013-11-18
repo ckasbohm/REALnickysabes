@@ -1,0 +1,1 @@
+﻿class startScreen extends MovieClip{}

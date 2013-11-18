@@ -26,42 +26,36 @@
 		if(_x > 600)
 	{
 		this.removeMovieClip();
+		
 	}
 	
 
 		for(var i in _root.ship.enemies)
 		{
 
-	for(var i in _root.ship.enemies)
-	{
-
-		if(this.hitTest( _root.ship.enemies[i] ) )
-		{
-		this.removeMovieClip();
-		_root.ship.enemies[i].explode();
-		}
-
-	}
-		for (var i in enemyMissile)
-		{
-			if(this.hitTest(enemyMissile[i]))
+			for(var i in _root.ship.enemies)
 			{
-				this.removeMovieClip();
-				enemyMissile[i].explode();
-		}
-	
-		if(_root.enemyship.shootLimiter =0)
-		{
-			var enemyShot =("enemymissle1","enemymissle1"+_root.getNextHighestDepth(),_root.getNextHighestDepth());
-			enemyMissile.push(enemyShot);
-		}
-	
-	
-}
-	
-}
 
+					if(this.hitTest( _root.ship.enemies[i] ) )
+				{
+					this.removeMovieClip();
+					_root.ship.enemies[i].explode();
+				}
+				
+				
+					for(var i in _root.enemyship.enemyMissile)
+				{
+						for(var j in _root.ship.heroMissile)
+					{
+						if(this.hitTest(_root.enemyship.enemyMissile[i]))
+					{
+						_root.enemyMissile[i].explode();
+					}
+		
 
+				}
+}
+}
 	}
-
+	}
 }

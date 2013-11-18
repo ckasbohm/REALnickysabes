@@ -4,6 +4,19 @@
 	
 var speed;
 
+
+
+
+	function explode()
+	
+	{
+		var explosion = _root.attachMovie( "Explosion" , "Explosion" + 	_root.getNextHighestDepth(), _root.getNextHighestDepth() );
+		explosion._x = _x;
+		explosion._y = _y;
+		this.removeMovieClip();
+		_root.ship.updateHealth(100);
+	
+	}
 	function onLoad()
 
 	{
@@ -14,7 +27,7 @@ var speed;
 	{
 		_x += speed;
 		
-		if(this.hitTest(_root.ship1))
+		if(this.hitTest(_root.ship))
 		{
 			this.removeMovieClip();
 		}

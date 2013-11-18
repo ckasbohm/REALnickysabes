@@ -2,6 +2,7 @@
 {
 	var speed;
 	var shootTimer;
+	var enemyMissile;
 
 	
 	function explode()
@@ -22,6 +23,7 @@
 		_y= Math.random()*300;
 		speed = Math.random()*5+5;
 		shootTimer = 0;
+		enemyMissile=[];
 
 	}
 	
@@ -57,6 +59,8 @@
 			var missile = _root.attachMovie("enemymissle1","enemymissle1"+_root.getNextHighestDepth(),_root.getNextHighestDepth());
 			missile._x = _x - 50;
 			missile._y = _y +3;
+			enemyMissile.push(missile);
+			
 			
 
 		}
